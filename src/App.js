@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import TopBar from './component/common/jsx/topBar';
 import Home from './component/features/HomePage/home';
+import './app.scss';
 
 function App() {
   return (
