@@ -12,6 +12,21 @@ const TopBar = () => (
       </span>
       <span>2021</span>
     </div>
+    <div className="center-container">
+      <span>most views</span>
+    </div>
+    <div className="right-container">
+      <span>
+        <IconContext.Provider value={{ className: 'back' }}>
+          <IoIosArrowBack />
+        </IconContext.Provider>
+      </span>
+      <span>
+        <IconContext.Provider value={{ className: 'back' }}>
+          <IoIosArrowBack />
+        </IconContext.Provider>
+      </span>
+    </div>
   </div>
 );
 
