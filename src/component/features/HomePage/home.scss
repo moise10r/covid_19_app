@@ -62,6 +62,7 @@
           width: 100%;
           padding: 1rem;
           position: relative;
+          cursor: pointer;
           .img-wrapper {
             width: 90%;
             height: 10rem;
@@ -115,6 +116,10 @@
             .bg{
               background-color: darken($pri-bg-color, 10);
             }
+          }
+          &:hover,
+          &:hover .bg {
+            background-color: $hover-color;
           }
         }
       }
