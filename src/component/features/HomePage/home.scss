@@ -5,17 +5,23 @@
 .main-home-section {
   width: 100%;
   padding: 3rem 0;
+
   .main-home-wrapper {
     width: 100%;
+
     .continent-container {
       @include container;
       @include flex;
+
       align-items: flex-end;
+
       .left-container {
         width: 50%;
+
         .img-wrapper {
           position: relative;
           width: 100%;
+
           .bg {
             position: absolute;
             top: 0;
@@ -25,16 +31,20 @@
             background-color: $sec-bg-color;
             opacity: 0.8;
           }
+
           img {
             max-width: 100%;
           }
         }
       }
+
       .right-container {
         width: 50%;
         align-self: center;
+
         .content-wrapper {
           margin-left: 2.5rem;
+
           h1 {
             color: $text-color;
             font-size: 2.7rem;
@@ -47,33 +57,41 @@
         }
       }
     }
+
     .countries-container {
       width: 100%;
       background-color: $pri-bg-color;
+
       .title {
         color: $text-color;
         padding: 1rem;
       }
+
       .countries-list {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+
         .country {
           width: 100%;
           padding: 1rem;
           position: relative;
           cursor: pointer;
+
           .img-wrapper {
             width: 90%;
             height: 10rem;
             position: relative;
             overflow: hidden;
+
             @include flex;
             @include flex-center(column);
+
             img {
               min-height: 100%;
               width: 100%;
             }
+
             .bg {
               position: absolute;
               top: 0;
@@ -84,39 +102,49 @@
               opacity: 0.8;
             }
           }
+
           .content {
             width: 100%;
+
             @include flex;
             @include flex-end(column);
+
             align-items: flex-end;
             margin-top: 1rem;
+
             .name {
               color: $text-color;
               font-size: 2.5rem;
               margin-right: 1rem;
             }
+
             .cases {
               color: $text-color;
               font-size: 2rem;
               margin-right: 1rem;
             }
           }
+
           .extend {
             position: absolute;
             top: 1rem;
             right: 1rem;
+
             .icon {
               font-size: 2.3rem;
               color: $text-color;
             }
           }
+
           &:nth-child(4n + 2),
           &:nth-child(4n + 3) {
             background-color: darken($pri-bg-color, 10);
-            .bg{
+
+            .bg {
               background-color: darken($pri-bg-color, 10);
             }
           }
+
           &:hover,
           &:hover .bg {
             background-color: $hover-color;
