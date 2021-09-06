@@ -4,8 +4,20 @@
 
 .main-home-section {
   width: 100%;
-  background-color: $sec-bg-color;
+  padding-top: 3rem;
   .main-home-wrapper {
     @include container;
+    .continent-container {
+      width: 100%;
+      .left-container {
+        width: 45%;
+        .img-wrapper {
+          width: 100%;
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
   }
 }
