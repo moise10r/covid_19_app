@@ -61,6 +61,7 @@
         .country {
           width: 100%;
           margin-top: 2rem;
+          position: relative;
           .img-wrapper {
             width: 90%;
             height: 10rem;
@@ -95,6 +96,15 @@
             .cases {
               color: $text-color;
               font-size: 2rem;
+            }
+          }
+          .extend {
+            position: absolute;
+            top: 0;
+            right: 0;
+            .icon {
+              font-size: 2.3rem;
+              color: $text-color;
             }
           }
         }

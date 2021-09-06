@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconContext } from 'react-icons';
-import { BsArrowRightShort } from 'react-icons/bs';
+import { BiRightArrowCircle } from 'react-icons/bi';
 import './home.scss';
 import continent from './europe.png';
 import continentMap from './europ_map.png';
@@ -35,8 +35,8 @@ const Home = () => (
               <span className="cases">3346</span>
             </div>
             <span className="extend">
-              <IconContext.Provider value={{ className: 'icon record ' }}>
-                <BsArrowRightShort />
+              <IconContext.Provider value={{ className: 'icon ' }}>
+                <BiRightArrowCircle />
               </IconContext.Provider>
             </span>
           </li>
