@@ -1,11 +1,32 @@
 @import '../../scss/mixins.scss';
-@import '../../scss/mixins.scss';
+@import '../../scss/variable.scss';
 @import '../../scss/typography.scss';
 
 .top-navbar {
   width: 100%;
-  height: 6rem;
-  background-color: red;
-  @include flex;
-  @include flex-between(row);
+  height: 5rem;
+  background-color: $sec-bg-color;
+  .main-wrapper {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    @include flex;
+    @include flex-between(row);
+  }
+  .left-container {
+    @include flex;
+    span {
+      @include flex;
+      font-size: 1.9rem;
+      .back {
+        margin-right: 1rem;
+        font-size: 2rem;
+      }
+    }
+  }
+  .center-container {
+    span {
+      font-size: 1.9rem;
+    }
+  }
 }

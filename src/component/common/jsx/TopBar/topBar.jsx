@@ -9,7 +9,7 @@ const TopBar = () => (
     <div className="main-wrapper">
       <div className="left-container">
         <span>
-          <IconContext.Provider value={{ className: 'back' }}>
+          <IconContext.Provider value={{ className: 'icon  record' }}>
             <IoIosArrowBack />
           </IconContext.Provider>
         </span>
@@ -20,7 +20,7 @@ const TopBar = () => (
       </div>
       <div className="right-container">
         <span>
-          <IconContext.Provider value={{ className: 'back' }}>
+          <IconContext.Provider value={{ className: 'icon settings' }}>
             <FaMicrophone />
           </IconContext.Provider>
         </span>
