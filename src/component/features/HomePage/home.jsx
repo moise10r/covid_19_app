@@ -40,6 +40,51 @@ const Home = () => (
               </IconContext.Provider>
             </span>
           </li>
+          <li className="country">
+            <div className="img-wrapper">
+              <div className="bg" />
+              <img src={continentMap} alt="continent-img" />
+            </div>
+            <div className="content">
+              <h2 className="name">France</h2>
+              <span className="cases">3346</span>
+            </div>
+            <span className="extend">
+              <IconContext.Provider value={{ className: 'icon ' }}>
+                <BiRightArrowCircle />
+              </IconContext.Provider>
+            </span>
+          </li>
+          <li className="country">
+            <div className="img-wrapper">
+              <div className="bg" />
+              <img src={continentMap} alt="continent-img" />
+            </div>
+            <div className="content">
+              <h2 className="name">France</h2>
+              <span className="cases">3346</span>
+            </div>
+            <span className="extend">
+              <IconContext.Provider value={{ className: 'icon ' }}>
+                <BiRightArrowCircle />
+              </IconContext.Provider>
+            </span>
+          </li>
+          <li className="country">
+            <div className="img-wrapper">
+              <div className="bg" />
+              <img src={continentMap} alt="continent-img" />
+            </div>
+            <div className="content">
+              <h2 className="name">France</h2>
+              <span className="cases">3346</span>
+            </div>
+            <span className="extend">
+              <IconContext.Provider value={{ className: 'icon ' }}>
+                <BiRightArrowCircle />
+              </IconContext.Provider>
+            </span>
+          </li>
         </ul>
       </div>
     </div>

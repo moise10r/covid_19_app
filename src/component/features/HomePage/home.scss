@@ -92,16 +92,18 @@
             .name {
               color: $text-color;
               font-size: 2.5rem;
+              margin-right: 1rem;
             }
             .cases {
               color: $text-color;
               font-size: 2rem;
+              margin-right: 1rem;
             }
           }
           .extend {
             position: absolute;
             top: 0;
-            right: 0;
+            right: 1rem;
             .icon {
               font-size: 2.3rem;
               color: $text-color;
