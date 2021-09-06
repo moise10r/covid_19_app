@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
-import TopBar from './component/common/jsx/topBar';
+import TopBar from './component/common/jsx/TopBar/topBar';
 import Home from './component/features/HomePage/home';
 import './app.scss';
 
