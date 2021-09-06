@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
-
-@font-face {
-  font-family: 'Gill-sans' sans-serif;
-  src: url('../../../fonts/Gill-Sans-Light.otf');
-}
+@import './variable.scss';
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  background-color: $sec-bg-color;
 }
 
 * {
@@ -14,7 +14,6 @@ html {
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
-  font-family: 'Lato' sans-serif;
 }
 
 input,
