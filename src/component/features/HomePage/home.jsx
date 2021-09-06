@@ -8,6 +8,7 @@ const Home = () => (
       <div className="continent-container">
         <div className="left-container">
           <div className="img-wrapper">
+            <div className="bg" />
             <img src={continent} alt="continent-img" />
           </div>
         </div>

@@ -9,12 +9,40 @@
     @include container;
     .continent-container {
       width: 100%;
+      @include flex;
+      align-items: flex-end;
       .left-container {
-        width: 45%;
+        width: 50%;
         .img-wrapper {
+          position: relative;
           width: 100%;
+          .bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: $sec-bg-color;
+            opacity: 0.8;
+          }
           img {
             max-width: 100%;
+          }
+        }
+      }
+      .right-container {
+        width: 50%;
+        align-self: center;
+        .content-wrapper {
+          margin-left: 2.5rem;
+          h1 {
+            color: $text-color;
+            font-size: 2.7rem;
+          }
+
+          span {
+            color: $text-color;
+            font-size: 2rem;
           }
         }
       }
