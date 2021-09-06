@@ -6,9 +6,9 @@
   width: 100%;
   padding-top: 3rem;
   .main-home-wrapper {
-    @include container;
+    width: 100%;
     .continent-container {
-      width: 100%;
+      @include container;
       @include flex;
       align-items: flex-end;
       .left-container {
@@ -43,6 +43,44 @@
           span {
             color: $text-color;
             font-size: 2rem;
+          }
+        }
+      }
+    }
+    .countries-container {
+      width: 100%;
+      background-color: $pri-bg-color;
+      .title {
+        color: $text-color;
+        padding: 1rem;
+      }
+      .countries-list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .country {
+          width: 100%;
+          margin-top: 2rem;
+          .img-wrapper {
+            width: 90%;
+            height: 10rem;
+            position: relative;
+            overflow: hidden;
+            @include flex;
+            @include flex-center(column);
+            img {
+              min-height: 100%;
+              width: 100%;
+            }
+            .bg {
+              position: absolute;
+              top: 0;
+              right: 0;
+              left: 0;
+              bottom: 0;
+              background-color: $pri-bg-color;
+              opacity: 0.8;
+            }
           }
         }
       }
