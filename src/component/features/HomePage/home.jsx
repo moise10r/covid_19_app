@@ -4,16 +4,18 @@ import continent from './europe.png';
 
 const Home = () => (
   <div className="main-home-section">
-    <div className="continent-container">
-      <div className="left-container">
-        <div className="img-wrapper">
-          <img src={continent} alt="continent-img" />
+    <div className="main-home-wrapper">
+      <div className="continent-container">
+        <div className="left-container">
+          <div className="img-wrapper">
+            <img src={continent} alt="continent-img" />
+          </div>
         </div>
-      </div>
-      <div className="right-container">
-        <div className="content-wrapper">
-          <h1>Europe</h1>
-          <span>28339</span>
+        <div className="right-container">
+          <div className="content-wrapper">
+            <h1>Europe</h1>
+            <span>28339</span>
+          </div>
         </div>
       </div>
     </div>

@@ -3,5 +3,9 @@
 @import '../../common/scss/typography.scss';
 
 .main-home-section {
+  width: 100%;
   background-color: $sec-bg-color;
+  .main-home-wrapper {
+    @include container;
+  }
 }

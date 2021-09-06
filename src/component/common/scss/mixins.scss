@@ -1,3 +1,8 @@
+@mixin container {
+  width: 95%;
+  margin: 0 auto;
+}
+
 @mixin flex {
   display: flex;
   align-items: center;
