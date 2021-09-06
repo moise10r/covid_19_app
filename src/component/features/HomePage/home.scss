@@ -68,19 +68,7 @@
             overflow: hidden;
             @include flex;
             @include flex-center(column);
-            img {
-              min-height: 100%;
-              width: 100%;
-            }
-            .bg {
-              position: absolute;
-              top: 0;
-              right: 0;
-              left: 0;
-              bottom: 0;
-              background-color: $pri-bg-color;
-              opacity: 0.8;
-            }
+  
           }
         }
       }
