@@ -52,5 +52,25 @@
         }
       }
     }
+    .towns-container {
+      width: 100%;
+      background-color: $pri-bg-color;
+
+      .title {
+        color: $text-color;
+        padding: 1rem;
+      }
+
+      .towns-list {
+        width: 100%;
+        @include flex-center(column);
+        .town {
+          width: 100%;
+          background-color: red;
+          @include flex;
+          @include flex-between(row);
+        }
+      }
+    }
   }
 }
