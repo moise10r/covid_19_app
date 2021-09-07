@@ -1,14 +1,14 @@
 import { Route, Switch } from 'react-router-dom';
-import TopBar from './component/common/jsx/TopBar/topBar';
 import Home from './component/features/HomePage/home';
+import Detail from './component/features/DetailPage/detail';
 import './app.scss';
 
 function App() {
   return (
     <div className="App">
-      <TopBar />
       <Switch>
-        <Route path="/" component={Home} />
+        <Route path="/detail" component={Detail} />
+        <Route path="/" exact component={Home} />
       </Switch>
     </div>
   );

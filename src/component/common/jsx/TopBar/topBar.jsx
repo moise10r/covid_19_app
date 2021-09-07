@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import { IoIosArrowBack, IoIosSettings } from 'react-icons/io';
 import { FaMicrophone } from 'react-icons/fa';
@@ -8,11 +9,11 @@ const TopBar = () => (
   <div className="top-navbar">
     <div className="main-wrapper">
       <div className="left-container">
-        <span>
+        <Link to="/detail">
           <IconContext.Provider value={{ className: 'back' }}>
             <IoIosArrowBack />
           </IconContext.Provider>
-        </span>
+        </Link>
         <span>2021</span>
       </div>
       <div className="center-container">

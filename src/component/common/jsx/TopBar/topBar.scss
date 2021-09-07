@@ -20,6 +20,11 @@
     @include flex;
 
     span {
+      color: $text-color;
+      font-size: 1.8rem;
+    }
+
+    a {
       @include flex;
 
       font-size: 1.8rem;
