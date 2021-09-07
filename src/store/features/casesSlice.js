@@ -7,7 +7,7 @@ const getCasesByContinent = createAsyncThunk('/cases/continent', async () => {
   return data;
 });
 
-const casesSlice = createSlice({
+export const casesSlice = createSlice({
   name: 'cases',
   initialState: {
     cases: [],
