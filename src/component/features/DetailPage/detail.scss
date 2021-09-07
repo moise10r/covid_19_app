@@ -1,0 +1,56 @@
+@import '../../common/scss/variable.scss';
+@import '../../common/scss/mixins.scss';
+@import '../../common/scss/typography.scss';
+
+.main-detail-section {
+  width: 100%;
+  padding: 3rem 0;
+
+  .main-detail-wrapper {
+    width: 100%;
+    .continent-container {
+      @include container;
+      @include flex;
+      .left-container {
+        width: 50%;
+        .img-wrapper {
+          position: relative;
+          width: 100%;
+
+          .bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: $sec-bg-color;
+            opacity: 0.8;
+          }
+
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+      .right-container {
+        width: 50%;
+        @include flex;
+        @include flex-end(row);
+        .content-wrapper {
+          @include flex;
+          @include flex-end(column);
+          align-items: flex-end;
+          h1 {
+            color: $text-color;
+            text-align: right;
+            font-size: 2.5rem;
+          }
+          span {
+            color: $text-color;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
