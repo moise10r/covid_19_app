@@ -29,7 +29,7 @@ const Detail = () => (
           <ul className="towns-list">
             <li className="town">
               <div className="left-container">
-                <h2 className="name">France</h2>
+                <h2 className="name">Prague</h2>
               </div>
               <div className="right-container">
                 <span>453 cases</span>

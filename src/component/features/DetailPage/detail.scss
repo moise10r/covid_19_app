@@ -66,9 +66,28 @@
         @include flex-center(column);
         .town {
           width: 100%;
-          background-color: red;
           @include flex;
           @include flex-between(row);
+          padding: 2.5rem 1.5rem;
+          .left-container {
+            @include flex;
+            .name {
+              font-size: 2.2rem;
+              color: $text-color;
+            }
+          }
+          .right-container {
+            @include flex;
+            span {
+              color: $text-color;
+              font-size: 2rem;
+              @include flex;
+              .icon {
+                margin-left: 2rem;
+                font-size: 2rem;
+              }
+            }
+          }
         }
       }
     }
