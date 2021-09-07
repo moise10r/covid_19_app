@@ -18,15 +18,18 @@
 
   .left-container {
     @include flex;
+
     span {
       color: $text-color;
       font-size: 1.8rem;
     }
-    
+
     a {
       @include flex;
+
       font-size: 1.8rem;
       color: $text-color;
+
       .back {
         margin-right: 0.5rem;
         font-size: 2rem;

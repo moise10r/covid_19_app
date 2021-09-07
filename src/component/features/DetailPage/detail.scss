@@ -7,12 +7,16 @@
 
   .main-detail-wrapper {
     width: 100%;
+
     .continent-container {
       @include container;
       @include flex;
+
       padding: 2rem 0;
+
       .left-container {
         width: 50%;
+
         .img-wrapper {
           position: relative;
           width: 100%;
@@ -32,19 +36,25 @@
           }
         }
       }
+
       .right-container {
         width: 50%;
+
         @include flex;
         @include flex-end(row);
+
         .content-wrapper {
           @include flex;
           @include flex-end(column);
+
           align-items: flex-end;
+
           h1 {
             color: $text-color;
             text-align: right;
             font-size: 2.5rem;
           }
+
           span {
             color: $text-color;
             font-size: 2rem;
@@ -52,6 +62,7 @@
         }
       }
     }
+
     .towns-container {
       width: 100%;
       background-color: $pri-bg-color;
@@ -63,32 +74,43 @@
 
       .towns-list {
         width: 100%;
+
         @include flex-center(column);
+
         .town {
           width: 100%;
+
           @include flex;
           @include flex-between(row);
+
           padding: 2.5rem 1.5rem;
+
           .left-container {
             @include flex;
+
             .name {
               font-size: 2.2rem;
               color: $text-color;
             }
           }
+
           .right-container {
             @include flex;
+
             span {
               color: $text-color;
               font-size: 2rem;
+
               @include flex;
+
               .icon {
                 margin-left: 2rem;
                 font-size: 2rem;
               }
             }
           }
-          &:nth-child(odd){
+
+          &:nth-child(odd) {
             background-color: $sec-bg-color;
           }
         }
