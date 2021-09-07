@@ -2,10 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const baseURL = 'https://covid-api.mmediagroup.fr/v1/cases/';
-const getCasesByContinent = createAsyncThunk('/cases/continent', async () => {
-  const { data } = await axios.get(`${baseURL}?continent=europe`);
-  return data;
-});
+
 
 const casesSlice = createSlice({
   name: 'cases',
