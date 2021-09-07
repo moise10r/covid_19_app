@@ -4,13 +4,13 @@
 
 .main-detail-section {
   width: 100%;
-  padding: 3rem 0;
 
   .main-detail-wrapper {
     width: 100%;
     .continent-container {
       @include container;
       @include flex;
+      padding: 2rem 0;
       .left-container {
         width: 50%;
         .img-wrapper {
@@ -87,6 +87,9 @@
                 font-size: 2rem;
               }
             }
+          }
+          &:nth-child(odd){
+            background-color: $sec-bg-color;
           }
         }
       }

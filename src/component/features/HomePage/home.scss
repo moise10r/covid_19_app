@@ -4,7 +4,6 @@
 
 .main-home-section {
   width: 100%;
-  padding: 3rem 0;
 
   .main-home-wrapper {
     width: 100%;
@@ -12,7 +11,7 @@
     .continent-container {
       @include container;
       @include flex;
-
+      padding: 3rem 0;
       align-items: flex-end;
 
       .left-container {
