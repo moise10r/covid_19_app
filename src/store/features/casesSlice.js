@@ -7,7 +7,7 @@ export const getCasesByContinent = createAsyncThunk('/cases/continent', async ()
   const { data } = await axios.get(`${baseURL}?continent=europe`);
   const countryValues = Object.values(data);
   const allCountries = countryValues.map((country) => country.All);
-  const filteredCountry = allCountries.map((c) => ({ confirmed: c.confirmed.toLocaleString('en-US'), country: c.country }));
+  const filteredCountry = allCountries.map((c) => ({ confirmed: c.confirmed, country: c.country }));
   return filteredCountry;
 });
 

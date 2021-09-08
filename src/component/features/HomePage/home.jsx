@@ -12,7 +12,6 @@ import casesCounter from '../../../utils/casescCounter';
 const Home = () => {
   const { cases } = useSelector((state) => state);
   const dispatch = useDispatch();
-  console.log(cases.length);
   console.log(casesCounter(cases));
   useEffect(() => {
     if (cases.length === 0) dispatch(getCasesByContinent());
@@ -32,7 +31,7 @@ const Home = () => {
             <div className="right-container">
               <div className="content-wrapper">
                 <h1>Europe</h1>
-                <span>{0}</span>
+                <span>{casesCounter(cases)}</span>
               </div>
             </div>
           </div>
@@ -48,7 +47,7 @@ const Home = () => {
                     </div>
                     <div className="content">
                       <h2 className="name">{country}</h2>
-                      <span className="cases">{`${confirmed} cases`}</span>
+                      <span className="cases">{`${confirmed.toLocaleString('en-US')} cases`}</span>
                     </div>
                     <span className="extend">
                       <IconContext.Provider value={{ className: 'icon ' }}>
