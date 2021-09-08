@@ -8,20 +8,20 @@ import './home.scss';
 import continent from './europe.png';
 import continentMap from './europ_map.png';
 import TopBar from '../../common/jsx/TopBar/topBar';
-import casesCounter from '../../../utils/casescCounter';
+import casesCounter from '../../../utils/casesCounter';
 
 const Home = () => {
   const { cases } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const handleCountryName = (country) => {
-    console.log(country);
+    console.log(cases[cases.length - 1]);
     dispatch(getCountryCases(country));
   };
 
   console.log(casesCounter(cases));
   useEffect(() => {
-    if (cases.length === 0) dispatch(getAllCases());
+    dispatch(getAllCases());
   }, []);
   return (
     <>

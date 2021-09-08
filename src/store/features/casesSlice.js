@@ -13,9 +13,7 @@ export const getAllCases = createAsyncThunk('/cases/continent', async () => {
 
 export const getCountryCases = createAsyncThunk('/cases/country', async (country) => {
   const { data } = await axios.get(`${baseURL}?country=${country}`);
-  const countryValues = Object.values(data).map((country) => country.All);
-  const filteredCountry = countryValues.map((c) => ({ confirmed: c.confirmed, country: c.country }));
-  return filteredCountry;
+  return data;
 });
 
 const casesSlice = createSlice({
@@ -40,8 +38,11 @@ const casesSlice = createSlice({
       state.status = 'loading';
     });
     builder.addCase(getCountryCases.fulfilled, (state, action) => {
+      const { All } = action.payload;
       state.status = 'success';
-      state.cases = action.payload;
+      const current = { confirmed: All.confirmed, country: All.country };
+      state.cases = [...state.cases].concat(current);
+      // state.cases = [...country, ...current];
     });
     builder.addCase(getCountryCases.rejected, (state) => {
       state.status = 'failed';
