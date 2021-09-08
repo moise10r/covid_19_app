@@ -12,9 +12,10 @@ import casesCounter from '../../../utils/casescCounter';
 const Home = () => {
   const { cases } = useSelector((state) => state);
   const dispatch = useDispatch();
+  console.log(cases.length);
   console.log(casesCounter(cases));
   useEffect(() => {
-    if (cases.lenght === 0) dispatch(getCasesByContinent());
+    if (cases.length === 0) dispatch(getCasesByContinent());
   }, []);
   return (
     <>
