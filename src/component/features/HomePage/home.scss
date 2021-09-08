@@ -16,7 +16,7 @@
       align-items: flex-end;
 
       .left-container {
-        width: 50%;
+        width: 55%;
 
         .img-wrapper {
           position: relative;
@@ -33,26 +33,26 @@
           }
 
           img {
-            max-width: 100%;
+            width: 100%;
           }
         }
       }
 
       .right-container {
-        width: 50%;
+        width: 45%;
         align-self: center;
 
         .content-wrapper {
-          margin-left: 2.5rem;
+          margin-left: 10rem;
 
           h1 {
             color: $text-color;
-            font-size: 2.7rem;
+            font-size: 7rem;
           }
 
           span {
             color: $text-color;
-            font-size: 2rem;
+            font-size: 3rem;
           }
         }
       }

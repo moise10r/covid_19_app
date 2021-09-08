@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IconContext } from 'react-icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { BiRightArrowCircle } from 'react-icons/bi';
+import { getCasesByContinent } from '../../../store/features/casesSlice';
 import './home.scss';
 import continent from './europe.png';
 import continentMap from './europ_map.png';
 import TopBar from '../../common/jsx/TopBar/topBar';
 
 const Home = () => {
-  const state = useSelector((state) => state);
-  console.log(state);
+  const { cases } = useSelector((state) => state);
+  const dispatch = useDispatch();
+
+  console.log(cases);
+  useEffect(() => {
+    dispatch(getCasesByContinent());
+  }, []);
   return (
     <>
       <TopBar />
@@ -43,8 +49,8 @@ const Home = () => {
                 </div>
                 <span className="extend">
                   <IconContext.Provider value={{ className: 'icon ' }}>
-                <BiRightArrowCircle />
-              </IconContext.Provider>
+                    <BiRightArrowCircle />
+                  </IconContext.Provider>
                 </span>
               </li>
               <li className="country">
@@ -58,8 +64,8 @@ const Home = () => {
                 </div>
                 <span className="extend">
                   <IconContext.Provider value={{ className: 'icon ' }}>
-                <BiRightArrowCircle />
-              </IconContext.Provider>
+                    <BiRightArrowCircle />
+                  </IconContext.Provider>
                 </span>
               </li>
               <li className="country">
@@ -73,8 +79,8 @@ const Home = () => {
                 </div>
                 <span className="extend">
                   <IconContext.Provider value={{ className: 'icon ' }}>
-                <BiRightArrowCircle />
-              </IconContext.Provider>
+                    <BiRightArrowCircle />
+                  </IconContext.Provider>
                 </span>
               </li>
               <li className="country">
@@ -88,8 +94,8 @@ const Home = () => {
                 </div>
                 <span className="extend">
                   <IconContext.Provider value={{ className: 'icon ' }}>
-                <BiRightArrowCircle />
-              </IconContext.Provider>
+                    <BiRightArrowCircle />
+                  </IconContext.Provider>
                 </span>
               </li>
               <li className="country">
@@ -103,8 +109,8 @@ const Home = () => {
                 </div>
                 <span className="extend">
                   <IconContext.Provider value={{ className: 'icon ' }}>
-                <BiRightArrowCircle />
-              </IconContext.Provider>
+                    <BiRightArrowCircle />
+                  </IconContext.Provider>
                 </span>
               </li>
               <li className="country">
@@ -118,8 +124,8 @@ const Home = () => {
                 </div>
                 <span className="extend">
                   <IconContext.Provider value={{ className: 'icon ' }}>
-                <BiRightArrowCircle />
-              </IconContext.Provider>
+                    <BiRightArrowCircle />
+                  </IconContext.Provider>
                 </span>
               </li>
               <li className="country">
@@ -133,8 +139,8 @@ const Home = () => {
                 </div>
                 <span className="extend">
                   <IconContext.Provider value={{ className: 'icon ' }}>
-                <BiRightArrowCircle />
-              </IconContext.Provider>
+                    <BiRightArrowCircle />
+                  </IconContext.Provider>
                 </span>
               </li>
               <li className="country">
@@ -148,8 +154,8 @@ const Home = () => {
                 </div>
                 <span className="extend">
                   <IconContext.Provider value={{ className: 'icon ' }}>
-                <BiRightArrowCircle />
-              </IconContext.Provider>
+                    <BiRightArrowCircle />
+                  </IconContext.Provider>
                 </span>
               </li>
             </ul>
