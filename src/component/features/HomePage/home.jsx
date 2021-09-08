@@ -15,7 +15,6 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const handleCountryName = (country) => {
-    console.log(cases[cases.length - 1]);
     dispatch(getCountryCases(country));
   };
 
