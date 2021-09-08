@@ -16,7 +16,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <TopBar />
+      <TopBar title="most views" year={null} />
       <div className="main-home-section">
         <div className="main-home-wrapper">
           <div className="continent-container">

@@ -6,7 +6,7 @@ import { IoIosArrowBack, IoIosSettings } from 'react-icons/io';
 import { FaMicrophone } from 'react-icons/fa';
 import './topBar.scss';
 
-const TopBar = ({year, title }) => (
+const TopBar = ({ year, title }) => (
   <div className="top-navbar">
     <div className="main-wrapper">
       <div className="left-container">
