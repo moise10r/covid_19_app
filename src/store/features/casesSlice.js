@@ -21,6 +21,7 @@ const casesSlice = createSlice({
   initialState: {
     cases: [],
     status: null,
+    current: {},
   },
   extraReducers: (builder) => {
     builder.addCase(getAllCases.pending, (state) => {
@@ -38,32 +39,8 @@ const casesSlice = createSlice({
       state.status = 'loading';
     });
     builder.addCase(getCountryCases.fulfilled, (state, action) => {
-      const { All } = action.payload;
       state.status = 'success';
-      const filteredState = state.cases.filter(({ country }) => country !== All.country);
-      console.log('length', Object.keys(action.payload).length);
-      if (Object.keys(action.payload).length === 1) {
-        state.cases = [...filteredState].concat(Object.values(action.payload));
-      }
-      Object.entries(action.payload).forEach(([key, value]) => {
-        console.log('value', value);
-        if (key === 'All') {
-          state.cases = [...filteredState].concat({
-            ...value,
-          });
-        } else {
-          state.cases = [...filteredState].concat({
-            country: key,
-            ...value,
-          });
-        }
-      });
-
-      // const countryValue = Object.values(action.payload);
-      // const { All } = action.payload;
-      // state.status = 'success';
-      // const filteredState = state.cases.filter(({ country }) => country !== All.country);
-      // state.cases = [...filteredState].concat(countryValue);
+      state.current = { ...state.current, ...action.payload };
     });
     builder.addCase(getCountryCases.rejected, (state) => {
       state.status = 'failed';

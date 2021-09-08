@@ -12,7 +12,6 @@ import './detail.scss';
 const Detail = () => {
   const dispatch = useDispatch();
   const { country } = useParams();
-  console.log(country);
   useEffect(() => {
     dispatch(getCountryCases(country));
   }, []);
