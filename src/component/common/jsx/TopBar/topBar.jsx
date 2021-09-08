@@ -9,7 +9,7 @@ const TopBar = () => (
   <div className="top-navbar">
     <div className="main-wrapper">
       <div className="left-container">
-        <Link to="/detail">
+        <Link to="/">
           <IconContext.Provider value={{ className: 'back' }}>
             <IoIosArrowBack />
           </IconContext.Provider>
