@@ -10,13 +10,13 @@ import continentMap from '../HomePage/europ_map.png';
 import './detail.scss';
 
 const Detail = () => {
-  const state = useSelector((state) => state);
-  console.log(state);
+  const { current } = useSelector((state) => state);
   const dispatch = useDispatch();
   const { country } = useParams();
   useEffect(() => {
     dispatch(getCountryCases(country));
   }, []);
+  const { All } = current;
   return (
     <>
       <TopBar />
@@ -31,8 +31,8 @@ const Detail = () => {
             </div>
             <div className="right-container">
               <div className="content-wrapper">
-                <h1>CZECH REPUBLIC</h1>
-                <span>28339</span>
+                <h1>{All.country}</h1>
+                <span>{All.confirmed.toLocaleString('en-US')}</span>
               </div>
             </div>
           </div>
