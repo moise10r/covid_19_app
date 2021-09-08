@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { BiRightArrowCircle } from 'react-icons/bi';
-import { getAllCases, getCountryCases } from '../../../store/features/casesSlice';
+import { getAllCases } from '../../../store/features/casesSlice';
 import './home.scss';
 import continent from './europe.png';
 import continentMap from './europ_map.png';
@@ -13,10 +13,6 @@ import casesCounter from '../../../utils/casesCounter';
 const Home = () => {
   const { cases } = useSelector((state) => state);
   const dispatch = useDispatch();
-
-  const handleCountryName = (country) => {
-    dispatch(getCountryCases(country));
-  };
 
   useEffect(() => {
     dispatch(getAllCases());
@@ -47,7 +43,7 @@ const Home = () => {
             <ul className="countries-list">
               {
                cases.map(({ confirmed, country }) => (
-                 <li key={country} role="menuitem" className="country" onClick={() => handleCountryName(country)} onKeyPress={() => {}}>
+                 <li key={country} role="menuitem" className="country">
                    <Link to={`/${country}`}>
                      <div className="img-wrapper">
                        <div className="bg" />

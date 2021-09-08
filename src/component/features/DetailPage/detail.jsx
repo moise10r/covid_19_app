@@ -1,16 +1,21 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { IconContext } from 'react-icons';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { BiRightArrowCircle } from 'react-icons/bi';
+import { getCountryCases } from '../../../store/features/casesSlice';
 import TopBar from '../../common/jsx/TopBar/topBar';
 import continentMap from '../HomePage/europ_map.png';
 import './detail.scss';
 
-const Detail = (props) => {
-  const { cases } = useSelector((state) => state);
-  const filteredCases = cases.find(({ country }) => country === props.match.params.country);
-  console.log(filteredCases);
+const Detail = () => {
+  const dispatch = useDispatch();
+  const { country } = useParams();
+  console.log(country);
+  useEffect(() => {
+    dispatch(getCountryCases(country));
+  }, []);
   return (
     <>
       <TopBar />
