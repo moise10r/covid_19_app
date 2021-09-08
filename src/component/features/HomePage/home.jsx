@@ -19,7 +19,6 @@ const Home = () => {
     dispatch(getCountryCases(country));
   };
 
-  console.log(casesCounter(cases));
   useEffect(() => {
     dispatch(getAllCases());
   }, []);
@@ -48,25 +47,25 @@ const Home = () => {
             <h2 className="title">STATS BY COUNTRY</h2>
             <ul className="countries-list">
               {
-                cases.map(({ confirmed, country }) => (
-                  <li key={country} role="menuitem" className="country" onClick={() => handleCountryName(country)} onKeyPress={() => {}}>
-                    <Link to={`/${country}`}>
-                      <div className="img-wrapper">
-                        <div className="bg" />
-                        <img src={continentMap} alt="continent-img" />
-                      </div>
-                      <div className="content">
-                        <h2 className="name">{country}</h2>
-                        <span className="cases">{`${confirmed.toLocaleString('en-US')} cases`}</span>
-                      </div>
-                      <span className="extend">
-                        <IconContext.Provider value={{ className: 'icon ' }}>
-                          <BiRightArrowCircle />
-                        </IconContext.Provider>
-                      </span>
-                    </Link>
-                  </li>
-                ))
+               cases.map(({ confirmed, country }) => (
+                 <li key={country} role="menuitem" className="country" onClick={() => handleCountryName(country)} onKeyPress={() => {}}>
+                   <Link to={`/${country}`}>
+                     <div className="img-wrapper">
+                       <div className="bg" />
+                       <img src={continentMap} alt="continent-img" />
+                     </div>
+                     <div className="content">
+                       <h2 className="name">{country}</h2>
+                       <span className="cases">{`${confirmed.toLocaleString('en-US')} cases`}</span>
+                     </div>
+                     <span className="extend">
+                       <IconContext.Provider value={{ className: 'icon ' }}>
+                         <BiRightArrowCircle />
+                       </IconContext.Provider>
+                     </span>
+                   </Link>
+                 </li>
+               ))
               }
             </ul>
           </div>
