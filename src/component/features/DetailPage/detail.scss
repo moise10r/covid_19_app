@@ -53,11 +53,17 @@
             color: $text-color;
             text-align: right;
             font-size: 2.5rem;
+            @include media(990px){
+              font-size: 5rem;
+            }
           }
 
           span {
             color: $text-color;
             font-size: 2rem;
+            @include media(990px){
+              font-size: 3rem;
+            }
           }
         }
       }
