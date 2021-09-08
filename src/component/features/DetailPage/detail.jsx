@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { IconContext } from 'react-icons';
@@ -11,15 +10,12 @@ import './detail.scss';
 
 const Detail = () => {
   const { current } = useSelector((state) => state);
-  console.log(current);
   const dispatch = useDispatch();
   const { country } = useParams();
   const { All } = current;
   const townList = Object.entries(current).slice(1);
-  console.log(townList);
 
   useEffect(() => {
-    console.log('dispatch');
     dispatch(getCountryCases(country));
   }, []);
   return (
