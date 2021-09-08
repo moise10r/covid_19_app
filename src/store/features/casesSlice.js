@@ -3,7 +3,15 @@ import axios from 'axios';
 
 const baseURL = 'https://covid-api.mmediagroup.fr/v1/cases/';
 
-export const getCasesByContinent = createAsyncThunk('/cases/continent', async () => {
+export const getAllCases = createAsyncThunk('/cases/continent', async () => {
+  const { data } = await axios.get(`${baseURL}?continent=europe`);
+  const countryValues = Object.values(data);
+  const allCountries = countryValues.map((country) => country.All);
+  const filteredCountry = allCountries.map((c) => ({ confirmed: c.confirmed, country: c.country }));
+  return filteredCountry;
+});
+
+export const getCasesBySingleContinent = createAsyncThunk('/cases/continent', async () => {
   const { data } = await axios.get(`${baseURL}?continent=europe`);
   const countryValues = Object.values(data);
   const allCountries = countryValues.map((country) => country.All);
@@ -18,14 +26,14 @@ const casesSlice = createSlice({
     status: null,
   },
   extraReducers: (builder) => {
-    builder.addCase(getCasesByContinent.pending, (state) => {
+    builder.addCase(getAllCases.pending, (state) => {
       state.status = 'loading';
     });
-    builder.addCase(getCasesByContinent.fulfilled, (state, action) => {
+    builder.addCase(getAllCases.fulfilled, (state, action) => {
       state.status = 'success';
       state.cases = action.payload;
     });
-    builder.addCase(getCasesByContinent.rejected, (state) => {
+    builder.addCase(getAllCases.rejected, (state) => {
       state.status = 'failed';
     });
   },
