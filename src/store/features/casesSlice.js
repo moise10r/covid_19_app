@@ -42,7 +42,6 @@ const casesSlice = createSlice({
       state.status = 'success';
       const current = { confirmed: All.confirmed, country: All.country };
       state.cases = [...state.cases].concat(current);
-      // state.cases = [...country, ...current];
     });
     builder.addCase(getCountryCases.rejected, (state) => {
       state.status = 'failed';
