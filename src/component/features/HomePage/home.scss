@@ -43,16 +43,24 @@
         align-self: center;
 
         .content-wrapper {
-          margin-left: 10rem;
-
+          margin-left: 2rem;
+          @include media(990px){
+            margin-left: 10rem;
+          }
           h1 {
             color: $text-color;
-            font-size: 7rem;
+            font-size: 3rem;
+            @include media(990px){
+              font-size: 7rem;
+            }
           }
 
           span {
             color: $text-color;
-            font-size: 3rem;
+            font-size: 2rem;
+            @include media(990px){
+              font-size: 3rem;
+            }
           }
         }
       }
