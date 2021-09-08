@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { IconContext } from 'react-icons';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BiRightArrowCircle } from 'react-icons/bi';
 import { getCountryCases } from '../../../store/features/casesSlice';
 import TopBar from '../../common/jsx/TopBar/topBar';
@@ -10,6 +10,8 @@ import continentMap from '../HomePage/europ_map.png';
 import './detail.scss';
 
 const Detail = () => {
+  const state = useSelector((state) => state);
+  console.log(state);
   const dispatch = useDispatch();
   const { country } = useParams();
   useEffect(() => {
