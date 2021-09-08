@@ -7,6 +7,7 @@ import './home.scss';
 import continent from './europe.png';
 import continentMap from './europ_map.png';
 import TopBar from '../../common/jsx/TopBar/topBar';
+import casesCounter from '../../../utils/casescCounter';
 
 const Home = () => {
   const { cases } = useSelector((state) => state);
@@ -30,7 +31,7 @@ const Home = () => {
             <div className="right-container">
               <div className="content-wrapper">
                 <h1>Europe</h1>
-                <span>28339</span>
+                <span>{casesCounter(cases)}</span>
               </div>
             </div>
           </div>
