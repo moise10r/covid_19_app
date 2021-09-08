@@ -5,7 +5,10 @@ const baseURL = 'https://covid-api.mmediagroup.fr/v1/cases/';
 
 export const getCasesByContinent = createAsyncThunk('/cases/continent', async () => {
   const { data } = await axios.get(`${baseURL}?continent=europe`);
-  return data;
+  const countryValues = Object.values(data);
+  const allCountries = countryValues.map((country) => country.All);
+  const filteredCountry = allCountries.map((c) => ({ confirmed: c.confirmed, country: c.country }));
+  return filteredCountry;
 });
 
 const casesSlice = createSlice({
