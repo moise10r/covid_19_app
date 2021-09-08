@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { IconContext } from 'react-icons';
 import { useSelector, useDispatch } from 'react-redux';
-import { BiRightArrowCircle } from 'react-icons/bi';
-import { getAllCases, getCountryCases } from '../../../store/features/casesSlice';
-import './home.scss';
+import { getAllCases } from '../../../store/features/casesSlice';
 import continent from './europe.png';
-import continentMap from './europ_map.png';
 import TopBar from '../../common/jsx/TopBar/topBar';
 import casesCounter from '../../../utils/casesCounter';
+import Country from './country';
+import './home.scss';
 
 const Home = () => {
   const { cases } = useSelector((state) => state);
@@ -43,23 +40,7 @@ const Home = () => {
             <ul className="countries-list">
               {
                cases.map(({ confirmed, country }) => (
-                 <li key={country} role="menuitem" className="country" onClick={() => dispatch(getCountryCases(country))} onKeyPress={() => {}}>
-                   <Link to={`/${country}`}>
-                     <div className="img-wrapper">
-                       <div className="bg" />
-                       <img src={continentMap} alt="continent-img" />
-                     </div>
-                     <div className="content">
-                       <h2 className="name">{country}</h2>
-                       <span className="cases">{`${confirmed.toLocaleString('en-US')} cases`}</span>
-                     </div>
-                     <span className="extend">
-                       <IconContext.Provider value={{ className: 'icon ' }}>
-                         <BiRightArrowCircle />
-                       </IconContext.Provider>
-                     </span>
-                   </Link>
-                 </li>
+                 <Country key={country} country={country} confirmed={confirmed} />
                ))
               }
             </ul>

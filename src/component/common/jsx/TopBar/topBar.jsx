@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import propTypes from 'prop-types';
 import { IconContext } from 'react-icons';
 import { IoIosArrowBack, IoIosSettings } from 'react-icons/io';
 import { FaMicrophone } from 'react-icons/fa';
 import './topBar.scss';
 
-const TopBar = () => (
+const TopBar = ({year, title }) => (
   <div className="top-navbar">
     <div className="main-wrapper">
       <div className="left-container">
@@ -14,10 +15,10 @@ const TopBar = () => (
             <IoIosArrowBack />
           </IconContext.Provider>
         </Link>
-        <span>2021</span>
+        <span>{year}</span>
       </div>
       <div className="center-container">
-        <span>most views</span>
+        <span>{title}</span>
       </div>
       <div className="right-container">
         <span>
@@ -34,5 +35,10 @@ const TopBar = () => (
     </div>
   </div>
 );
+
+TopBar.propTypes = {
+  year: propTypes.number.isRequired,
+  title: propTypes.string.isRequired,
+};
 
 export default TopBar;
