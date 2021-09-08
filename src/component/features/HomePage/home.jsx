@@ -46,7 +46,7 @@ const Home = () => {
                     </div>
                     <div className="content">
                       <h2 className="name">{country}</h2>
-                      <span className="cases">{`${confirmed}cases`}</span>
+                      <span className="cases">{`${confirmed} cases`}</span>
                     </div>
                     <span className="extend">
                       <IconContext.Provider value={{ className: 'icon ' }}>
