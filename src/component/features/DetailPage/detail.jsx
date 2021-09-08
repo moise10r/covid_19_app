@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { IconContext } from 'react-icons';
 import { useSelector } from 'react-redux';
@@ -6,9 +7,10 @@ import TopBar from '../../common/jsx/TopBar/topBar';
 import continentMap from '../HomePage/europ_map.png';
 import './detail.scss';
 
-const Detail = () => {
+const Detail = (props) => {
   const { cases } = useSelector((state) => state);
-  console.log(cases);
+  const filteredCases = cases.find(({ country }) => country === props.match.params.country);
+  console.log(filteredCases);
   return (
     <>
       <TopBar />

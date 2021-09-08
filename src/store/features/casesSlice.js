@@ -38,10 +38,10 @@ const casesSlice = createSlice({
       state.status = 'loading';
     });
     builder.addCase(getCountryCases.fulfilled, (state, action) => {
-      const { All } = action.payload;
+      const { All, ...rest } = action.payload;
       state.status = 'success';
       const filteredState = state.cases.filter(({ country }) => country !== All.country);
-      state.cases = [...filteredState].concat(All);
+      state.cases = [...filteredState].concat(All, rest);
     });
     builder.addCase(getCountryCases.rejected, (state) => {
       state.status = 'failed';
