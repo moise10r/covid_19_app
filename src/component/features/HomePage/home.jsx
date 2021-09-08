@@ -12,7 +12,6 @@ const Home = () => {
   const { cases } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  console.log(cases);
   useEffect(() => {
     dispatch(getCasesByContinent());
   }, []);
@@ -38,6 +37,25 @@ const Home = () => {
           <div className="countries-container">
             <h2 className="title">STATS BY COUNTRY</h2>
             <ul className="countries-list">
+              {
+                cases.map(({ confirmed, country }) => (
+                  <li key={country} className="country">
+                    <div className="img-wrapper">
+                      <div className="bg" />
+                      <img src={continentMap} alt="continent-img" />
+                    </div>
+                    <div className="content">
+                      <h2 className="name">{country}</h2>
+                      <span className="cases">{`${confirmed}cases`}</span>
+                    </div>
+                    <span className="extend">
+                      <IconContext.Provider value={{ className: 'icon ' }}>
+                        <BiRightArrowCircle />
+                      </IconContext.Provider>
+                    </span>
+                  </li>
+                ))
+              }
               <li className="country">
                 <div className="img-wrapper">
                   <div className="bg" />
