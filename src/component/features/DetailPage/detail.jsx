@@ -35,7 +35,7 @@ const Detail = () => {
                 {All ? (
                   <>
                     <h1>{All.country}</h1>
-                    <span>{All.confirmed.toLocaleString('en-US')}</span>
+                    <span>{`${All.confirmed.toLocaleString('en-US')} cases`}</span>
                   </>
                 ) : (<p>404</p>)}
               </div>
