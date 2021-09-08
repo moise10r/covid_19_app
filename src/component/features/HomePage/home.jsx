@@ -12,9 +12,9 @@ import casesCounter from '../../../utils/casescCounter';
 const Home = () => {
   const { cases } = useSelector((state) => state);
   const dispatch = useDispatch();
-
+  console.log(casesCounter(cases));
   useEffect(() => {
-    dispatch(getCasesByContinent());
+    if (cases.lenght === 0) dispatch(getCasesByContinent());
   }, []);
   return (
     <>
@@ -31,7 +31,7 @@ const Home = () => {
             <div className="right-container">
               <div className="content-wrapper">
                 <h1>Europe</h1>
-                <span>{casesCounter(cases)}</span>
+                <span>{0}</span>
               </div>
             </div>
           </div>
