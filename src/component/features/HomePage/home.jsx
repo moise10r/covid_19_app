@@ -12,6 +12,11 @@ import casesCounter from '../../../utils/casescCounter';
 const Home = () => {
   const { cases } = useSelector((state) => state);
   const dispatch = useDispatch();
+
+  const handleCountryName = (country) => {
+    console.log(country);
+  };
+
   console.log(casesCounter(cases));
   useEffect(() => {
     if (cases.length === 0) dispatch(getCasesByContinent());
@@ -31,7 +36,9 @@ const Home = () => {
             <div className="right-container">
               <div className="content-wrapper">
                 <h1>Europe</h1>
-                <span>{casesCounter(cases)}</span>
+                <span>
+                  {`${casesCounter(cases)} cases`}
+                </span>
               </div>
             </div>
           </div>
@@ -40,7 +47,7 @@ const Home = () => {
             <ul className="countries-list">
               {
                 cases.map(({ confirmed, country }) => (
-                  <li key={country} className="country">
+                  <li role="menuitem" key={country} className="country" onClick={() => handleCountryName(country)} onKeyPress={() => {}}>
                     <div className="img-wrapper">
                       <div className="bg" />
                       <img src={continentMap} alt="continent-img" />
