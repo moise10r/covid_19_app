@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -5,18 +6,18 @@ const baseURL = 'https://covid-api.mmediagroup.fr/v1/cases/';
 
 export const getAllCases = createAsyncThunk('/cases/continent', async () => {
   const { data } = await axios.get(`${baseURL}?continent=europe`);
-  const countryValues = Object.values(data);
-  const allCountries = countryValues.map((country) => country.All);
-  const filteredCountry = allCountries.map((c) => ({ confirmed: c.confirmed, country: c.country }));
+  const countryValues = Object.values(data).map((country) => country.All);
+  const filteredCountry = countryValues.map((c) => ({ confirmed: c.confirmed, country: c.country }));
   return filteredCountry;
 });
 
-export const getCasesBySingleContinent = createAsyncThunk('/cases/continent', async () => {
-  const { data } = await axios.get(`${baseURL}?continent=europe`);
-  const countryValues = Object.values(data);
-  const allCountries = countryValues.map((country) => country.All);
-  const filteredCountry = allCountries.map((c) => ({ confirmed: c.confirmed, country: c.country }));
-  return filteredCountry;
+export const getCountryCases = createAsyncThunk('/cases/country', async (country) => {
+  const { data } = await axios.get(`${baseURL}?country=${country}`);
+  // const countryValues = Object.values(data);
+  // const allCountries = countryValues.map((country) => country.All);
+  // const filteredCountry = allCountries.map((c) => ({ confirmed: c.confirmed, country: c.country }));
+  // return filteredCountry;
+  return data;
 });
 
 const casesSlice = createSlice({
@@ -34,6 +35,17 @@ const casesSlice = createSlice({
       state.cases = action.payload;
     });
     builder.addCase(getAllCases.rejected, (state) => {
+      state.status = 'failed';
+    });
+
+    builder.addCase(getCountryCases.pending, (state) => {
+      state.status = 'loading';
+    });
+    builder.addCase(getCountryCases.fulfilled, (state, action) => {
+      state.status = 'success';
+      state.cases = action.payload;
+    });
+    builder.addCase(getCountryCases.rejected, (state) => {
       state.status = 'failed';
     });
   },
