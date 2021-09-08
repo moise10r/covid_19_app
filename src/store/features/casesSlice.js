@@ -7,17 +7,15 @@ const baseURL = 'https://covid-api.mmediagroup.fr/v1/cases/';
 export const getAllCases = createAsyncThunk('/cases/continent', async () => {
   const { data } = await axios.get(`${baseURL}?continent=europe`);
   const countryValues = Object.values(data).map((country) => country.All);
-  const filteredCountry = countryValues.map((c) => ({ confirmed: c.confirmed, country: c.country }));
-  return filteredCountry;
+  const allCountries = countryValues.map((c) => ({ confirmed: c.confirmed, country: c.country }));
+  return allCountries;
 });
 
 export const getCountryCases = createAsyncThunk('/cases/country', async (country) => {
   const { data } = await axios.get(`${baseURL}?country=${country}`);
-  // const countryValues = Object.values(data);
-  // const allCountries = countryValues.map((country) => country.All);
-  // const filteredCountry = allCountries.map((c) => ({ confirmed: c.confirmed, country: c.country }));
-  // return filteredCountry;
-  return data;
+  const countryValues = Object.values(data).map((country) => country.All);
+  const filteredCountry = countryValues.map((c) => ({ confirmed: c.confirmed, country: c.country }));
+  return filteredCountry;
 });
 
 const casesSlice = createSlice({
