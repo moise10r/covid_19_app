@@ -48,6 +48,9 @@
           @include flex-end(column);
 
           align-items: flex-end;
+          @include media(990px){
+            margin-right: 5rem;
+          }
 
           h1 {
             color: $text-color;
@@ -62,7 +65,7 @@
             color: $text-color;
             font-size: 2rem;
             @include media(990px){
-              font-size: 3rem;
+              font-size: 2.5rem;
             }
           }
         }
