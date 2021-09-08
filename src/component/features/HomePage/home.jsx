@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { BiRightArrowCircle } from 'react-icons/bi';
@@ -47,20 +48,22 @@ const Home = () => {
             <ul className="countries-list">
               {
                 cases.map(({ confirmed, country }) => (
-                  <li role="menuitem" key={country} className="country" onClick={() => handleCountryName(country)} onKeyPress={() => {}}>
-                    <div className="img-wrapper">
-                      <div className="bg" />
-                      <img src={continentMap} alt="continent-img" />
-                    </div>
-                    <div className="content">
-                      <h2 className="name">{country}</h2>
-                      <span className="cases">{`${confirmed.toLocaleString('en-US')} cases`}</span>
-                    </div>
-                    <span className="extend">
-                      <IconContext.Provider value={{ className: 'icon ' }}>
-                        <BiRightArrowCircle />
-                      </IconContext.Provider>
-                    </span>
+                  <li key={country} role="menuitem" className="country" onClick={() => handleCountryName(country)} onKeyPress={() => {}}>
+                    <Link to={`/${country}`}>
+                      <div className="img-wrapper">
+                        <div className="bg" />
+                        <img src={continentMap} alt="continent-img" />
+                      </div>
+                      <div className="content">
+                        <h2 className="name">{country}</h2>
+                        <span className="cases">{`${confirmed.toLocaleString('en-US')} cases`}</span>
+                      </div>
+                      <span className="extend">
+                        <IconContext.Provider value={{ className: 'icon ' }}>
+                          <BiRightArrowCircle />
+                        </IconContext.Provider>
+                      </span>
+                    </Link>
                   </li>
                 ))
               }
