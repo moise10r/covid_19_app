@@ -1,158 +1,54 @@
-import React from 'react';
-import { IconContext } from 'react-icons';
-import { BiRightArrowCircle } from 'react-icons/bi';
-import './home.scss';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllCases } from '../../../store/features/casesSlice';
 import continent from './europe.png';
-import continentMap from './europ_map.png';
 import TopBar from '../../common/jsx/TopBar/topBar';
+import casesCounter from '../../../utils/casesCounter';
+import Country from './country';
+import './home.scss';
 
-const Home = () => (
-  <>
-    <TopBar />
-    <div className="main-home-section">
-      <div className="main-home-wrapper">
-        <div className="continent-container">
-          <div className="left-container">
-            <div className="img-wrapper">
-              <div className="bg" />
-              <img src={continent} alt="continent-img" />
+const Home = () => {
+  const { cases } = useSelector((state) => state);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllCases());
+  }, []);
+  return (
+    <>
+      <TopBar title="most views" year={null} />
+      <div className="main-home-section">
+        <div className="main-home-wrapper">
+          <div className="continent-container">
+            <div className="left-container">
+              <div className="img-wrapper">
+                <div className="bg" />
+                <img src={continent} alt="continent-img" />
+              </div>
+            </div>
+            <div className="right-container">
+              <div className="content-wrapper">
+                <h1>Europe</h1>
+                <span>
+                  {`${casesCounter(cases)} cases`}
+                </span>
+              </div>
             </div>
           </div>
-          <div className="right-container">
-            <div className="content-wrapper">
-              <h1>Europe</h1>
-              <span>28339</span>
-            </div>
+          <div className="countries-container">
+            <h2 className="title">STATS BY COUNTRY</h2>
+            <ul className="countries-list">
+              {
+               cases.map(({ confirmed, country }) => (
+                 <Country key={country} country={country} confirmed={confirmed} />
+               ))
+              }
+            </ul>
           </div>
-        </div>
-        <div className="countries-container">
-          <h2 className="title">STATS BY COUNTRY</h2>
-          <ul className="countries-list">
-            <li className="country">
-              <div className="img-wrapper">
-                <div className="bg" />
-                <img src={continentMap} alt="continent-img" />
-              </div>
-              <div className="content">
-                <h2 className="name">France</h2>
-                <span className="cases">3346</span>
-              </div>
-              <span className="extend">
-                <IconContext.Provider value={{ className: 'icon ' }}>
-                  <BiRightArrowCircle />
-                </IconContext.Provider>
-              </span>
-            </li>
-            <li className="country">
-              <div className="img-wrapper">
-                <div className="bg" />
-                <img src={continentMap} alt="continent-img" />
-              </div>
-              <div className="content">
-                <h2 className="name">France</h2>
-                <span className="cases">3346</span>
-              </div>
-              <span className="extend">
-                <IconContext.Provider value={{ className: 'icon ' }}>
-                  <BiRightArrowCircle />
-                </IconContext.Provider>
-              </span>
-            </li>
-            <li className="country">
-              <div className="img-wrapper">
-                <div className="bg" />
-                <img src={continentMap} alt="continent-img" />
-              </div>
-              <div className="content">
-                <h2 className="name">France</h2>
-                <span className="cases">3346</span>
-              </div>
-              <span className="extend">
-                <IconContext.Provider value={{ className: 'icon ' }}>
-                  <BiRightArrowCircle />
-                </IconContext.Provider>
-              </span>
-            </li>
-            <li className="country">
-              <div className="img-wrapper">
-                <div className="bg" />
-                <img src={continentMap} alt="continent-img" />
-              </div>
-              <div className="content">
-                <h2 className="name">France</h2>
-                <span className="cases">3346</span>
-              </div>
-              <span className="extend">
-                <IconContext.Provider value={{ className: 'icon ' }}>
-                  <BiRightArrowCircle />
-                </IconContext.Provider>
-              </span>
-            </li>
-            <li className="country">
-              <div className="img-wrapper">
-                <div className="bg" />
-                <img src={continentMap} alt="continent-img" />
-              </div>
-              <div className="content">
-                <h2 className="name">France</h2>
-                <span className="cases">3346</span>
-              </div>
-              <span className="extend">
-                <IconContext.Provider value={{ className: 'icon ' }}>
-                  <BiRightArrowCircle />
-                </IconContext.Provider>
-              </span>
-            </li>
-            <li className="country">
-              <div className="img-wrapper">
-                <div className="bg" />
-                <img src={continentMap} alt="continent-img" />
-              </div>
-              <div className="content">
-                <h2 className="name">France</h2>
-                <span className="cases">3346</span>
-              </div>
-              <span className="extend">
-                <IconContext.Provider value={{ className: 'icon ' }}>
-                  <BiRightArrowCircle />
-                </IconContext.Provider>
-              </span>
-            </li>
-            <li className="country">
-              <div className="img-wrapper">
-                <div className="bg" />
-                <img src={continentMap} alt="continent-img" />
-              </div>
-              <div className="content">
-                <h2 className="name">France</h2>
-                <span className="cases">3346</span>
-              </div>
-              <span className="extend">
-                <IconContext.Provider value={{ className: 'icon ' }}>
-                  <BiRightArrowCircle />
-                </IconContext.Provider>
-              </span>
-            </li>
-            <li className="country">
-              <div className="img-wrapper">
-                <div className="bg" />
-                <img src={continentMap} alt="continent-img" />
-              </div>
-              <div className="content">
-                <h2 className="name">France</h2>
-                <span className="cases">3346</span>
-              </div>
-              <span className="extend">
-                <IconContext.Provider value={{ className: 'icon ' }}>
-                  <BiRightArrowCircle />
-                </IconContext.Provider>
-              </span>
-            </li>
-          </ul>
         </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 export default Home;
