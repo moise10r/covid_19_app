@@ -14,6 +14,10 @@
 
 [See Live](https://determined-archimedes-c0ea66.netlify.app/)
 
+## Video 
+
+[presentation video](https://www.loom.com/share/83bb11549f314108ab9866f9c78f20e0)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
