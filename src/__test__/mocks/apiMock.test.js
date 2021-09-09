@@ -17,7 +17,7 @@ describe('state', () => {
     });
   });
 
-  it('should set user when action is fulfilled', () => {
+  it('should set cases when action is fulfilled', () => {
     const action = {
       type: getAllCases.fulfilled,
       payload: { confirmed: 29292, country: 'Bruxel' },
