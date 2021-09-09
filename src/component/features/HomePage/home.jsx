@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { getAllCases } from '../../../store/features/casesSlice';
-import continent from './europe.png';
+import continentImg from './europe.png';
 import TopBar from '../../common/jsx/TopBar/topBar';
 import casesCounter from '../../../utils/casesCounter';
 import Country from './country';
@@ -10,9 +11,10 @@ import './home.scss';
 const Home = () => {
   const { cases } = useSelector((state) => state);
   const dispatch = useDispatch();
+  const { continent } = useParams();
 
   useEffect(() => {
-    dispatch(getAllCases());
+    dispatch(getAllCases(continent));
   }, []);
   return (
     <>
@@ -23,7 +25,7 @@ const Home = () => {
             <div className="left-container">
               <div className="img-wrapper">
                 <div className="bg" />
-                <img src={continent} alt="continent-img" />
+                <img src={continentImg} alt="continent-img" />
               </div>
             </div>
             <div className="right-container">

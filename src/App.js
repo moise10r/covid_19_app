@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <Switch>
         <Route path="/:country" component={Detail} />
-        <Route path="/" exact component={FilterByContinent} />
         <Route path="/" component={Home} />
+        <Route path="/:continent" exact component={FilterByContinent} />
       </Switch>
     </div>
   );
