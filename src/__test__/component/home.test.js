@@ -1,10 +1,12 @@
+/* eslint-disable react/display-name */
+import React from 'react';
 import { render } from '@testing-library/react';
-import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import Home from '../../component/features/HomePage/home';
 import store from '../../store/store';
+import Home from '../../component/features/HomePage/home';
 
+jest.mock('../../component/common/jsx/TopBar/topBar', () => () => (<div>Hello World</div>));
 const MockHome = () => (
   <BrowserRouter>
     <Provider store={store}>
@@ -14,12 +16,8 @@ const MockHome = () => (
 );
 
 describe('Test the Home component', () => {
-  beforeEach(() => {
-    render(<MockHome />);
-  });
-
   it('should match the snapshot', () => {
-    const tree = renderer.create(<MockHome />);
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<MockHome />);
+    expect(container.textContent).toBe('Hello WorldEurope0 casesSTATS BY COUNTRY');
   });
 });
