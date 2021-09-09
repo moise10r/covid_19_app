@@ -8,9 +8,9 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/:country" component={Detail} />
-        <Route path="/" component={Home} />
-        <Route path="/:continent" exact component={FilterByContinent} />
+        <Route path="/country/:country" component={Detail} />
+        <Route path="/continent/:continent" component={Home} />
+        <Route path="/" exact component={FilterByContinent} />
       </Switch>
     </div>
   );

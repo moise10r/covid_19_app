@@ -30,7 +30,7 @@ const Home = () => {
             </div>
             <div className="right-container">
               <div className="content-wrapper">
-                <h1>Europe</h1>
+                <h1>{continent}</h1>
                 <span>
                   {`${casesCounter(cases)} cases`}
                 </span>

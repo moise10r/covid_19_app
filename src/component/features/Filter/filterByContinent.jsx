@@ -12,7 +12,7 @@ const FilterByContinent = () => (
         {
           continents.map(({ id, name }) => (
             <li key={id} className="continent">
-              <Link to={`/${name}`}>
+              <Link to={`/continent/${name}`}>
                 {name}
               </Link>
             </li>

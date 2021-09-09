@@ -20,8 +20,10 @@
       text-align: center;
       padding: 1.5rem;
       cursor: pointer;
-      color: $text-color;
       border-bottom: 1px solid $text-color;
+      a {
+        color: $text-color;
+      }
 
       &:last-child {
         border-bottom: none;

@@ -12,7 +12,7 @@ const Country = ({ country, confirmed }) => {
 
   return (
     <li key={country} role="menuitem" className="country" onClick={() => dispatch(getCountryCases(country))} onKeyPress={() => {}}>
-      <Link to={`/${country}`}>
+      <Link to={`/country/${country}`}>
         <div className="img-wrapper">
           <div className="bg" />
           <img src={continentMap} alt="continent-img" />
