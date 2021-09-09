@@ -1,0 +1,35 @@
+@mixin container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center($direction) {
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin flex-between($direction) {
+  justify-content: space-between;
+  flex-direction: $direction;
+}
+
+@mixin flex-end($direction) {
+  justify-content: flex-end;
+  flex-direction: $direction;
+}
+
+@mixin flex-start($direction) {
+  justify-content: flex-start;
+  flex-direction: $direction;
+}
+
+@mixin media($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}

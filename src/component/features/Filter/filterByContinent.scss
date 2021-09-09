@@ -1,0 +1,46 @@
+@import '../../common/scss/variable.scss';
+@import '../../common/scss/mixins.scss';
+@import '../../common/scss/typography.scss';
+
+.continents-container {
+  width: 100%;
+  height: 90vh;
+
+  @include flex;
+  @include flex-center(row);
+
+  .continent-list {
+    width: 40%;
+    margin: 0 auto;
+    background-color: darken($pri-bg-color, 6);
+    border-radius: 1rem;
+
+    .continent {
+      width: 100%;
+      text-align: center;
+      padding: 1.5rem;
+      cursor: pointer;
+      border-bottom: 1px solid $text-color;
+
+      a {
+        color: $text-color;
+      }
+
+      &:last-child {
+        border-bottom: none;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+      }
+
+      &:first-child {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+      }
+
+      &:hover {
+        transform: scale(1);
+        background-color: darken($pri-bg-color, 15);
+      }
+    }
+  }
+}

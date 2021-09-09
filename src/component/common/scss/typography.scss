@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import './variable.scss';
+
+@font-face {
+  font-family: GillSans;
+  src: url('../../../fonts/GillSans.otf');
+  font-weight: normal;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $sec-bg-color;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  user-select: none;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
