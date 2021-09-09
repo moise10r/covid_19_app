@@ -20,7 +20,7 @@ MockTopBar.propTypes = {
   title: propTypes.string.isRequired,
 };
 
-describe('Test the Home component', () => {
+describe('Test the TopBar component', () => {
   beforeEach(() => {
     render(<MockTopBar year={2021} title="Most views" />);
   });
