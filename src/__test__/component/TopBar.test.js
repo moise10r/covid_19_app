@@ -16,13 +16,13 @@ const MockTopBar = ({ year, title }) => (
 );
 
 MockTopBar.propTypes = {
-  year: propTypes.number.isRequired,
+  year: propTypes.string.isRequired,
   title: propTypes.string.isRequired,
 };
 
 describe('Test the TopBar component', () => {
   beforeEach(() => {
-    render(<MockTopBar year={2021} title="Most views" />);
+    render(<MockTopBar year="2021" title="Most views" />);
   });
 
   it('should match the snapshot', () => {

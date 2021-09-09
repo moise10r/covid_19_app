@@ -37,7 +37,7 @@ const TopBar = ({ year, title }) => (
 );
 
 TopBar.propTypes = {
-  year: propTypes.number.isRequired,
+  year: propTypes.string.isRequired,
   title: propTypes.string.isRequired,
 };
 

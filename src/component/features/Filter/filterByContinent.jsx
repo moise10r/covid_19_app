@@ -6,7 +6,7 @@ import './filterByContinent.scss';
 
 const FilterByContinent = () => (
   <>
-    <TopBar year={null} title="Select a continent" />
+    <TopBar year="" title="Select a continent" />
     <div className="continents-container">
       <ul className="continent-list">
         {

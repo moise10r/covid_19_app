@@ -33,7 +33,7 @@ const Country = ({ country, confirmed }) => {
 
 Country.propTypes = {
   country: propTypes.string.isRequired,
-  confirmed: propTypes.string.isRequired,
+  confirmed: propTypes.number.isRequired,
 };
 
 export default Country;

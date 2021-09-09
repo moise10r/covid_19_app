@@ -20,7 +20,7 @@ const Detail = () => {
   }, []);
   return (
     <>
-      <TopBar title="town/city views" year={2021} />
+      <TopBar title="town/city views" year="2021" />
       <div className="main-detail-section">
         <div className="main-detail-wrapper">
           <div className="continent-container">
