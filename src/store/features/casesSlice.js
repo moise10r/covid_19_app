@@ -4,8 +4,8 @@ import axios from 'axios';
 
 const baseURL = 'https://covid-api.mmediagroup.fr/v1/cases/';
 
-export const getAllCases = createAsyncThunk('/cases/continent', async () => {
-  const { data } = await axios.get(`${baseURL}?continent=europe`);
+export const getAllCases = createAsyncThunk('/cases/continent', async (continent) => {
+  const { data } = await axios.get(`${baseURL}?continent=${continent}`);
   const countryValues = Object.values(data).map((country) => country.All);
   const allCountries = countryValues.map((c) => ({ confirmed: c.confirmed, country: c.country }));
   return allCountries;
