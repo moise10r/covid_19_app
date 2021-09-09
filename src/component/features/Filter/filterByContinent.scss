@@ -28,7 +28,8 @@
 
       &:last-child {
         border-bottom: none;
-        border-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
       }
 
       &:first-child {
