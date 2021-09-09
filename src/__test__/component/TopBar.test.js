@@ -26,7 +26,7 @@ describe('Test the TopBar component', () => {
   });
 
   it('should match the snapshot', () => {
-    const tree = renderer.create(<MockTopBar year={2021} title="Most views" />).toJSON();
+    const tree = renderer.create(<MockTopBar year="2021" title="Most views" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
