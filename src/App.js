@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <Switch>
+        <Route path="/continent/:continent" exact component={Home} />
         <Route path="/country/:country" component={Detail} />
-        <Route path="/continent/:continent" component={Home} />
         <Route path="/" exact component={FilterByContinent} />
       </Switch>
     </div>
