@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import continents from '../../../services/continentList';
 import TopBar from '../../common/jsx/TopBar/topBar';
 import './filterByContinent.scss';
@@ -10,7 +11,11 @@ const FilterByContinent = () => (
       <ul className="continent-list">
         {
           continents.map(({ id, name }) => (
-            <li key={id} className="continent">{name}</li>
+            <li key={id} className="continent">
+              <Link to={`/${name}`}>
+                {name}
+              </Link>
+            </li>
           ))
         }
       </ul>
