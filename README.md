@@ -41,6 +41,13 @@ npm install
 npm start
 ```
 
+### To Test it
+
+```bash
+npm run test
+```
+
+
 ### Build
 
 ```bash
