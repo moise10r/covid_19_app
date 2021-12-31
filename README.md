@@ -1,4 +1,4 @@
-# COVID_19 CASES TRACKER
+# COVID_19 CASES TRACKER.
 "This application displays Covid-19 confirmed cases from different country in Europe. "
 
 ![react](https://user-images.githubusercontent.com/57562869/132714311-4af231a9-b3a2-498c-9e2d-ab7e0679a444.png)
